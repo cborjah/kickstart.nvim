@@ -796,24 +796,18 @@ require('lazy').setup({
       vim.cmd.hi 'Comment gui=none'
     end,
   }, ]]
-
   {
-    'scottmckendry/cyberdream.nvim',
-    lazy = false,
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
-    config = function()
-      require('cyberdream').setup {
-        -- Recommended - see "Configuring" below for more config options
-        transparent = true,
-        italic_comments = true,
-        hide_fillchars = true,
-        borderless_telescope = true,
-        terminal_colors = true,
-      }
-      vim.cmd 'colorscheme cyberdream' -- set the colorscheme
+    opts = {
+      transparent_background = true,
+    },
+    config = function(_, opts)
+      require('catppuccin').setup(opts)
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
-
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 

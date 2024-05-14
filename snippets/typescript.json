@@ -1,0 +1,17 @@
+{
+  "Ignore TS next line": {
+    "prefix": "tsignorenl",
+    "body": ["// @ts-ignore"],
+    "description": "Ignore TypeScript errors for the next line"
+  },
+  "Expect TS error next line": {
+    "prefix": "tsexpect",
+    "body": ["// @ts-expect-error"],
+    "description": "Expect TypeScript error for the next line"
+  },
+  "React Functional Component Type": {
+    "prefix": "rfct",
+    "body": ["React.FC<${1:Props}>"],
+    "description": "React Functional Component Type"
+  }
+}

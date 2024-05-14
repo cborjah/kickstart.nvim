@@ -1,0 +1,91 @@
+{
+  "React Native Stateless Functional Component": {
+    "prefix": "rnsfc",
+    "body": [
+      "import React from 'react';",
+      "import { View, StyleSheet } from 'react-native';",
+      "",
+      "const ${1:MyComponent} = () => (",
+      "${2}",
+      ");",
+      "",
+      "export default ${1:MyComponent};"
+    ],
+    "description": "React Native Stateless Functional Component"
+  },
+  "React Native Class Component": {
+    "prefix": "rnc",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import { View, StyleSheet } from 'react-native';",
+      "",
+      "class ${1:MyComponent} extends Component {",
+      "  render() {",
+      "    return ();",
+      "  }",
+      "}",
+      "",
+      "export default ${1:MyComponent};"
+    ],
+    "description": "React Native Class Component"
+  },
+  "React Native Pure Class Component": {
+    "prefix": "rnpc",
+    "body": [
+      "import React, { PureComponent } from 'react';",
+      "import { View, StyleSheet } from 'react-native';",
+      "",
+      "class ${1:MyComponent} extends PureComponent {",
+      "  render() {",
+      "    return ();",
+      "  }",
+      "}",
+      "",
+      "export default ${1:MyComponent};"
+    ],
+    "description": "React Native Pure Class Component"
+  },
+  "StyleSheet": {
+    "prefix": "rnss",
+    "body": ["const styles = StyleSheet.create({", "	$1", "});"],
+    "description": "StyleSheet"
+  },
+  "On Start Should Set PanResponder": {
+    "prefix": "rnprset",
+    "body": ["onStartShouldSetPanResponder: (evt, gestureState) => {}"],
+    "description": "On Start Should Set PanResponder"
+  },
+  "On PanResponder Move": {
+    "prefix": "rnprmov",
+    "body": ["onPanResponderMove: (evt, gestureState) => {}"],
+    "description": "On PanResponder Move"
+  },
+  "On PanResponder Release": {
+    "prefix": "rnprrel",
+    "body": ["onPanResponderRelease: (evt, gestureState) => {}"],
+    "description": "On PanResponder Release"
+  },
+  "Create PanResponder": {
+    "prefix": "prcreate",
+    "body": [
+      "PanResponder.create({",
+      "  onStartShouldSetPanResponder: (evt, gestureState) => true,",
+      "  onMoveShouldSetPanResponder: (evt, gestureState) => true,",
+      "  onPanResponderGrant: (evt, gestureState) => {},",
+      "  onPanResponderMove: (evt, gestureState) => {},",
+      "  onPanResponderRelease: (evt, gestureState) => {},",
+      "});"
+    ],
+    "description": "Create PanResponder"
+  },
+  "View component": {
+    "prefix": "viewc",
+    "body": ["<View>$1</View>"],
+    "description": "React Native View component"
+  },
+  "Text component": {
+    "prefix": "textc",
+    "body": ["<Text>$1</Text>"],
+    "description": "React Native Text component"
+  }
+ }

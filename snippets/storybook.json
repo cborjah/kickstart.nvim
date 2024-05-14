@@ -1,0 +1,41 @@
+{
+  "Storybook File": {
+    "prefix": "sbfile",
+    "body": [
+      "import React from \"react\";",
+      "import { storiesOf } from \"@storybook/react-native\";",
+      "",
+      "import $1 from \"./$1\"",
+      "",
+      "storiesOf(\"$1\", module)",
+      " .add(\"Default\", () => (",
+      "   <$1 />",
+      " ));"
+    ]
+  },
+  "Storybook addDecorator": {
+    "prefix": "sbdec",
+    "body": ".addDecorator(getStory => <$1>{getStory()}</$1>)"
+  },
+  "Storybook Actions Data": {
+    "prefix": "sbad",
+    "body": [
+      "export const actionsData = {",
+      "  onAction: action('onAction'),",
+      "};"
+    ]
+  },
+  "Storybook Component Story Format": {
+    "prefix": "csf",
+    "body": [
+      "export default {",
+      "  title: \"$1\",",
+      "  decorators: [(Story) => ()],",
+      "};",
+      "",
+      "const NOOP = () => {};",
+      "",
+      "export const Default = () => ($2);"
+    ]
+  }
+}

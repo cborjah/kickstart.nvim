@@ -1,0 +1,57 @@
+{
+  "Istanbul Ignore Next Block": {
+    "prefix": "testIgnore",
+    "body": ["/* istanbul ignore next */"],
+    "description": "Exclude next block from code coverage"
+  },
+  "Jest Test File React Native": {
+    "prefix": "jtfrn",
+    "body": [
+      "import React from \"react\";",
+      "import { render } from \"@testing-library/react-native\";",
+      "",
+      "import $1 from '$3'",
+      "",
+      "describe('$1', () => {",
+      "  test('should $2', () => {",
+      "  	render(<$1/>);",
+      "  })",
+      "})"
+    ],
+    "description": "Jest Test File for React Native"
+  },
+  "Get By Test ID": {
+    "prefix": "gbti",
+    "body": ["getByTestId('${1:testID}')"],
+    "description": "Get By Test ID"
+  },
+  "Fire Event": {
+    "prefix": "fire",
+    "body": ["fireEvent($1, '$2')"],
+    "description": "Fire Event"
+  },
+  "Test ID": {
+    "prefix": "tid",
+    "body": ["testID={'$1'}"],
+    "description": "Test ID"
+  },
+  "Jest Test": {
+    "prefix": "test",
+    "body": ["test('should $1', () => {", " $2", "})"],
+    "description": "Jest Test"
+  },
+  "Jest Test File Ionic React": {
+    "prefix": "jtfir",
+    "body": [
+      "import React from \"react\";",
+      "import { render } from \"@testing-library/react\";",
+      "",
+      "describe('$1', () => {",
+      "  test('should $2', () => {",
+      "  	$3",
+      "  })",
+      "})"
+    ],
+    "description": "Jest Test File for Ionic React"
+  }
+}

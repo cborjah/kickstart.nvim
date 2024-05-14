@@ -1,0 +1,6 @@
+{
+  ".yarnrc.yml Config File for Yarn V3-4 (node-modules)": {
+    "prefix": "nodeLinker",
+    "body": "nodeLinker: node-modules"
+  }
+}

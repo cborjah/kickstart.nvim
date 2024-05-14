@@ -1,0 +1,17 @@
+{
+  "Switch Statement": {
+    "prefix": "jss",
+    "body": ["switch (${1:expression}) {", "  default:", "    break;", "}"],
+    "description": "Switch Statement"
+  },
+   "Console Log": {
+    "prefix": ["console", "log"],
+    "body": ["console.log($1)"],
+    "description": "Console Log"
+  },
+   "Object keys": {
+    "prefix": "okeys",
+    "body": ["Object.keys($1)"],
+    "description": "Get array of object's keys"
+  }
+}

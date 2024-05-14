@@ -1,0 +1,52 @@
+{
+  "Prisma Schema Model Definition": {
+    "prefix": "prismaModel",
+    "body": ["model $1 {", "  id    Int   @id @default(autoincrement())", "}"]
+  },
+  "Nexus Model Definition": {
+    "prefix": "nexusModel",
+    "body": [
+      "import { schema } from \"nexus\";",
+      "",
+      "schema.objectType({",
+      "  name: \"$1\",",
+      "  definition(t) {",
+      "    t.model.id();",
+      "  }",
+      "});"
+    ]
+  },
+  "Nexus Extend Model Definition": {
+    "prefix": "nexusExtend",
+    "body": [
+      "schema.extendType({",
+      "  type: \"$1\",",
+      "  definition(t) {",
+      "    t.field(\"$2\", {",
+      "      nullable: false,",
+      "      type: \"$3\",",
+      "      args: {},",
+      "      resolve(_root, _args, ctx) {}",
+      "    });",
+      "  }",
+      "});"
+    ]
+  },
+  "Prisma Resolver": {
+    "prefix": "prismaResolver",
+    "body": ["$1: (_parent, _args, context: Context) => {", "$2", "}"]
+  },
+  "Prisma Resolver File": {
+    "prefix": "prismaResolverFile",
+    "body": [
+      "import { Context } from \"../context\";",
+      "",
+      "const $1Resolvers = {",
+      " Query: {},",
+      " Mutation: {}",
+      "};",
+      "",
+      "export default $1Resolvers;"
+    ]
+  }
+}

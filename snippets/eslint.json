@@ -1,0 +1,7 @@
+{
+  "ESLint disable next line": {
+    "prefix": "lintdnl",
+    "body": ["// eslint-disable-next-line"],
+    "description": "ESLint disable next line"
+  }
+}

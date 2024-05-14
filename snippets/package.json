@@ -1,0 +1,43 @@
+{
+  "name": "custom-snips",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["javascript"],
+        "path": "./javascript.json"
+      },
+      {
+        "language": ["typescript"],
+        "path": "./typescript.json"
+      },
+      {
+        "language": ["javascript", "typescript", "typescriptreact"],
+        "path": "./react.json"
+      },
+      {
+        "language": ["javascript", "typescript", "typescriptreact"],
+        "path": "./react-native.json"
+      },
+      {
+        "language": ["javascript"],
+        "path": "./eslint.json"
+      },
+      {
+        "language": ["javascript"],
+        "path": "./testing.json"
+      },
+      {
+        "language": ["javascript"],
+        "path": "./storybook.json"
+      },
+      {
+        "language": ["javascript", "typescript", "typescriptreact"],
+        "path": "./prisma.json"
+      },
+      {
+        "language": ["javascript", "typescript", "typescriptreact"],
+        "path": "./yarn.json"
+      }
+    ]
+  }
+}

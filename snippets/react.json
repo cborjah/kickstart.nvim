@@ -1,0 +1,86 @@
+{
+  "Import PropTypes": {
+    "prefix": "ipt",
+    "body": ["import PropTypes from 'prop-types';"],
+    "description": "Import PropTypes"
+  },
+  "Declare PropTypes": {
+    "prefix": "dpt",
+    "body": [
+      "${1:MyComponent}.propTypes = {",
+      "  ${2:text: PropTypes.string.isRequired}",
+      "};"
+    ],
+    "description": "Declare PropTypes"
+  },
+  "Declare Default Prop Values": {
+    "prefix": "ddpv",
+    "body": [
+      "${1:MyComponent}.defaultProps = {",
+      "  ${2:text: \"Lorem ipsum\"}",
+      "};"
+    ],
+    "description": "Declare Default Prop Values"
+  },
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "	$1", "}"],
+    "description": "componentWillMount"
+  },
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "	$1", "}"],
+    "description": "componentDidMount"
+  },
+  "React Context": {
+    "prefix": "rctx",
+    "body": [
+      "import React from 'react';",
+      "",
+      "type Action = { type: '' };",
+      "type Dispatch = (action: Action) => void;",
+      "type State = {};",
+      "",
+      "type $1ContextProps = { children: React.ReactNode };",
+      "",
+      "const initialState = {};",
+      "",
+      "export const $1Context = React.createContext<{ state: State; dispatch: Dispatch } | undefined>(undefined);",
+      "",
+      "const $2Reducer = (state: State, action: Action) => {",
+      "  switch (action.type) {",
+      "    default: {",
+      "      throw new Error(`Unhandled action type: ${action.type}`);",
+      "    }",
+      "  }",
+      "};",
+      "",
+      "const $1Provider: React.FC<$1ContextProps> = ({",
+      "  children",
+      "}) => {",
+      "  const [state, dispatch] = React.useReducer($2Reducer, initialState);",
+      "",
+      "  const value = { state, dispatch };",
+      "",
+      "  return (",
+      "    <$1Context.Provider value={value}>",
+      "      {children}",
+      "    </$1Context.Provider>",
+      "  );",
+      "}",
+      "",
+      "const use$1 = () => {",
+      "  const context = React.useContext($1Context);",
+      "",
+      "  if (context === undefined) {",
+      "    throw new Error('use$2 must be used within an $1Provider');",
+      "  }",
+      "",
+      "  return context;",
+      "};",
+      "",
+      "export { $1Provider, use$1 };"
+    ],
+    "description": "React Functional Component Type"
+  }
+}

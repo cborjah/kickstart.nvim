@@ -716,6 +716,8 @@ require('lazy').setup({
           {
             'rafamadriz/friendly-snippets',
             config = function()
+              require('luasnip').filetype_extend('javascriptreact', { 'javascript' })
+              require('luasnip').filetype_extend('typescriptreact', { 'javascript' })
               require('luasnip.loaders.from_vscode').lazy_load { paths = '~/.config/nvim/snippets/' }
             end,
           },

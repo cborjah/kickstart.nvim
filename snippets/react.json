@@ -81,6 +81,17 @@
       "",
       "export { $1Provider, use$1 };"
     ],
-    "description": "React Functional Component Type"
+    "description": "React Context Pattern"
+  },
+  "React Stateless Functional Component": {
+    "prefix": "rsfc",
+    "body": [
+      "const ${1:MyComponent} = () => (",
+      "<${2}>${3}</${2}>",
+      ");",
+      "",
+      "export default ${1:MyComponent};"
+    ],
+    "description": "React Stateless Functional Component"
   }
 }

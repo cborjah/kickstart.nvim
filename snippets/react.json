@@ -86,11 +86,11 @@
   "React Stateless Functional Component": {
     "prefix": "rsfc",
     "body": [
-      "const ${1:MyComponent} = () => (",
-      "<${2}>${3}</${2}>",
-      ");",
-      "",
-      "export default ${1:MyComponent};"
+      "export default function ${1:MyComponent} () {",
+      " return (",
+      "   <${2}>${3}</${2}>",
+      " );",
+      "};"
     ],
     "description": "React Stateless Functional Component"
   }

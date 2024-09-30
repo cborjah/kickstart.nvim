@@ -162,7 +162,7 @@ vim.opt.scrolloff = 10
 vim.opt.inccommand = 'split'
 
 -- Enable line wrap
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`

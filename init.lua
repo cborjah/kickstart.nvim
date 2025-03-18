@@ -940,7 +940,7 @@ require('lazy').setup({
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
-  --[[ {
+  {
     'kawre/leetcode.nvim',
     build = ':TSUpdate html',
     dependencies = {
@@ -957,7 +957,7 @@ require('lazy').setup({
       -- configuration goes here
       lang = 'javascript',
     },
-  }, ]]
+  },
   -- tailwind-tools.lua
   {
     'luckasRanarison/tailwind-tools.nvim',

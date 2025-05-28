@@ -228,6 +228,9 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- Build the absolute path to the global CSharpier shim, installed using the 'dotnet tool install -g csharpier' command
+local cs_bin = vim.fn.expand '$HOME/.dotnet/tools/csharpier'
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -633,6 +636,7 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        automatic_enable = false,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -661,7 +665,7 @@ require('lazy').setup({
       },
     },
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -672,6 +676,14 @@ require('lazy').setup({
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+      formatters = {
+        -- Create a custom name to avoid fallback to the dotnet installed using Homebrew
+        csharpier_global = {
+          command = cs_bin,
+          args = { 'format', '$FILENAME' }, -- just pass the file path
+          stdin = false,
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
@@ -692,6 +704,7 @@ require('lazy').setup({
         sh = { 'beautysh' },
         bash = { 'beautysh' },
         zsh = { 'beautysh' },
+        cs = { 'csharpier_global' },
       },
     },
   },
@@ -895,7 +908,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'javascript', 'typescript' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'javascript', 'typescript', 'c_sharp' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
